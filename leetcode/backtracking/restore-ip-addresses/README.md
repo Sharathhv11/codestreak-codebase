@@ -13,7 +13,7 @@
 - **Space Complexity:** O(1)
 
 ## Explanation
-The solution uses backtracking to explore all possible valid partitions of the input string into four IP address segments. For each segment, it checks if it's a valid IP part (1-3 digits, value <= 255, no leading zeros except for '0' itself). The time and space complexity are constant because the maximum length of an IP address string is fixed (12 characters), limiting the search space.
+The solution uses backtracking to explore all possible ways to partition the input string into four valid IP address segments. At each step, it tries to form a segment and recursively calls itself with the remaining string. The time and space complexity are constant because the maximum length of an IP address string is limited (3*4=12), and the recursion depth is also fixed at 4.
 
 ---
 *Generated automatically by [CodeStreak](https://github.com/Sharathhv11/CodeStreak-webApp).*
