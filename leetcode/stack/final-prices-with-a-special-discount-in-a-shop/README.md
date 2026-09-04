@@ -4,8 +4,8 @@
 - **Platform:** LeetCode
 - **Concept / Pattern:** Stack
 - **Language:** python
-- **Runtime:** 11 ms
-- **Memory:** 12.6 MB
+- **Runtime:** 7 ms
+- **Memory:** 12.4 MB
 - **Tags:** None
 
 ## Complexity Analysis
@@ -13,7 +13,7 @@
 - **Space Complexity:** O(N)
 
 ## Explanation
-The solution uses a monotonic decreasing stack to find the next smaller element for each price. For each price, it pops elements from the stack that are greater than or equal to the current price, applies the discount, and pushes the current price onto the stack. This ensures each element is pushed and popped at most once, resulting in O(N) time and space complexity.
+The solution uses a monotonic stack to efficiently find the next smaller element for each price. The stack stores pairs of (price, index). For each new price, it pops elements from the stack that are greater than or equal to the current price, applying the discount. Finally, it pushes the current price and its index onto the stack. This results in a single pass, achieving O(N) time and O(N) space for the stack and result array.
 
 ---
 *Generated automatically by [CodeStreak](https://github.com/Sharathhv11/CodeStreak-webApp).*
