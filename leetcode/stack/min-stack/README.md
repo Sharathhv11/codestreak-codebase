@@ -3,9 +3,9 @@
 ## Problem Information
 - **Platform:** LeetCode
 - **Concept / Pattern:** Stack
-- **Language:** python
-- **Runtime:** 260 ms
-- **Memory:** 29.8 MB
+- **Language:** python3
+- **Runtime:** 101 ms
+- **Memory:** 31.1 MB
 - **Tags:** None
 
 ## Complexity Analysis
@@ -13,7 +13,7 @@
 - **Space Complexity:** O(N)
 
 ## Explanation
-The solution uses a custom stack where each node stores both its value and the minimum value encountered so far up to that point. This allows for O(1) time complexity for push, pop, top, and getMin operations. The space complexity is O(N) because, in the worst case, we store N nodes, each potentially containing a new minimum.
+The solution uses two stacks: one to store the elements and another to store the minimum element seen so far up to that point. Both push and pop operations take O(1) time by appending/popping from both stacks. getMin retrieves the minimum from the minStack in O(1) time. Space complexity is O(N) due to the storage of elements in two stacks.
 
 ---
 *Generated automatically by [CodeStreak](https://github.com/Sharathhv11/CodeStreak-webApp).*
