@@ -1,58 +1,24 @@
-class Node:
-    def __init__(self,val,minVal):
-        self.value = val
-        self.minVal = minVal
-
-class MinStack(object):
+class MinStack:
 
     def __init__(self):
-        self.stack = []
         
+        self.stack: List[int] = list()
+        self.minStack: List[int] = list()
 
-    def push(self, value):
-        """
-        :type value: int
-        :rtype: None
-        """
+    def push(self, value: int) -> None:
+        self.stack.append(value)
+        self.minStack.append(min(value, self.minStack[-1] if len(self.minStack) != 0 else value + 1))
 
-        if( not len(self.stack) ): #stack is empty
-            self.stack.append(Node(value,value))
-            return
 
-        #what is value is not smaller
-        node = self.stack[-1]
-        if( node.minVal <= value ):
-            self.stack.append(Node(value,node.minVal))
-        #what is value smaller till now 
-        else:
-            self.stack.append(Node(value,value))
+    def pop(self) -> None:
+        self.stack.pop()
+        self.minStack.pop()
 
-             
-        
+    def top(self) -> int:
+        return self.stack[-1]
 
-    def pop(self):
-        """
-        :rtype: None
-        """
-        if( len(self.stack) ):
-            self.stack.pop()
-        
-
-    def top(self):
-        """
-        :rtype: int
-        """
-        if( len(self.stack) ):
-            return self.stack[-1].value
-        
-
-    def getMin(self):
-        """
-        :rtype: int
-        """
-        if( len(self.stack) ):
-            return self.stack[-1].minVal
-        
+    def getMin(self) -> int:
+        return self.minStack[-1]
 
 
 # Your MinStack object will be instantiated and called as such:
