@@ -11,17 +11,7 @@ class Solution(object):
         stack = []
 
         for i,val in enumerate(prices):
-            if( i == 0 ):
-                stack.append([val,i])
-                continue
-
             
-            buff = []
-            while( len(stack) and stack[-1][0] < val ):
-                buff.append(stack.pop())
-
-            
-      
             while( len(stack) and stack[-1][0] >=  val  ):
                 prevVal,index = stack.pop()
                 amount = abs(prevVal - val) 
@@ -29,9 +19,7 @@ class Solution(object):
 
             stack.append([val,i])
 
-            while( len(buff) ):
-                stack.append(buff.pop())
-
+           
 
 
         return result
