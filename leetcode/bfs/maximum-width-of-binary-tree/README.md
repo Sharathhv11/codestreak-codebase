@@ -3,17 +3,17 @@
 ## Problem Information
 - **Platform:** LeetCode
 - **Concept / Pattern:** BFS
-- **Language:** java
-- **Runtime:** 1 ms
-- **Memory:** 43.8 MB
+- **Language:** python3
+- **Runtime:** 4 ms
+- **Memory:** 20.2 MB
 - **Tags:** None
 
 ## Complexity Analysis
 - **Time Complexity:** O(N)
-- **Space Complexity:** O(W)
+- **Space Complexity:** O(N)
 
 ## Explanation
-The solution uses Breadth-First Search (BFS) to traverse the tree level by level. Each node is assigned an index based on its position in a complete binary tree (left child 2*parent+1, right child 2*parent+2), adjusting for potential large values by subtracting the first node's index of each level. The maximum width is tracked as the difference between the last and first node's index at each level.
+The solution uses Breadth-First Search (BFS) to traverse the tree level by level. Each node is assigned an index, doubling for the left child and adding one for the right child, to calculate the width of each level. The maximum width found across all levels is then returned.
 
 ---
 *Generated automatically by [CodeStreak](https://github.com/Sharathhv11/CodeStreak-webApp).*
