@@ -10,10 +10,10 @@
 
 ## Complexity Analysis
 - **Time Complexity:** O(N log N)
-- **Space Complexity:** O(log N) or O(N)
+- **Space Complexity:** O(log N)
 
 ## Explanation
-The solution uses a greedy approach by sorting both players and trainers. It then iterates from the end of both sorted arrays, matching the strongest available player with the strongest available trainer if the player's skill is less than or equal to the trainer's. Sorting dominates the time complexity, and space complexity depends on the sorting algorithm used.
+The solution sorts both players and trainers arrays and then uses a two-pointer approach to greedily match players with trainers. By iterating from the largest player and trainer downwards, it ensures that the largest possible player is matched with the largest possible trainer they can be trained by, maximizing the overall count.
 
 ---
 *Generated automatically by [CodeStreak](https://github.com/Sharathhv11/CodeStreak-webApp).*
